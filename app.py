@@ -2,11 +2,11 @@ from flask import Flask, render_template, redirect, url_for
 from flask_pymongo import PyMongo
 import scraping
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template')
 
 # Use flask_pymono to set up mongo connection
 
-#app.config["MONGO_URI"] = 'mongodb://localhost27017/mars_app'
+app.config["MONGO_URI"] = 'mongodb://localhost27017/mars_app'
 
 mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
